@@ -11,6 +11,7 @@ import NoMatch from './pages/NoMatch';
 import SingleThought from './pages/SingleThought';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
+import Messenger from './pages/messenger/messenger'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -44,6 +45,7 @@ function App() {
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/profile/:username?" component={Profile} />
               <Route exact path="/thought/:id" component={SingleThought} />
+              <Route exact path="/messenger" component={Messenger} />
 
               <Route component={NoMatch} />
             </Switch>
