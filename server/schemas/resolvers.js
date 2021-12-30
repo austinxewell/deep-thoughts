@@ -1,4 +1,4 @@
-const { User, Thought } = require('../models');
+const { User, Thought, Conversation } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -100,6 +100,22 @@ const resolvers = {
             }
           
             throw new AuthenticationError('You need to be logged in!');
+          },
+          addConversation: async(parent, {senderId, receiverId }, context) => {
+            if(context.user) {
+
+              const sender = await User.findById(senderId)
+              const receiver = await User.findById(receiverId)
+
+              const newConversation = await Conversation.create(
+                { _id: context.user._id },
+                { $addToSet: { members: sender, receiver } },
+                { new: true, runValidators: true }
+              )
+              
+              console.log(newConversation)
+              return newConversation
+            }
           }
       }
     };

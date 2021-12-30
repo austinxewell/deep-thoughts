@@ -28,6 +28,17 @@ const typeDefs = gql`
     username: String
   }
 
+  type Conversation {
+    _id: ID
+    members: String
+  }
+
+  type Message {
+    _id: ID
+    sender: String
+    text: String
+  }
+
   type Query {
     me: User
     users: [User]
@@ -42,6 +53,7 @@ const typeDefs = gql`
     addThought(thoughtText: String!): Thought
     addReaction(thoughtId: ID!, reactionBody: String!): Thought
     addFriend(friendId: ID!): User
+    addConversation(members: ID!): Conversation
   }
 
   type Auth {
