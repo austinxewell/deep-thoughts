@@ -1,7 +1,9 @@
 # Deep Thoughts
   [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
   # Description
-  This is a full stack blog site that allows you to log in, create an account, post a thought, react to another users thought, add friends and view other users profiles. It is created with using MERN and is fully operational. This web application has been deployed using heroku and is live at https://limitless-shelf-82829.herokuapp.com/
+  This is a full stack blog site that allows you to log in, create an account, post a thought, react to another users thought, add friends and view other users profiles. It is created with using MERN and is fully operational. This web application has been deployed using heroku and is live at https://limitless-shelf-82829.herokuapp.com/.  This application includes technologies such as conditional rendering, MongoDB, Express.js, React, Node.js, Bcrypt, Apollo, and Faker
+
+
   # Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
